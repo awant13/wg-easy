@@ -44,6 +44,11 @@ RUN update-alternatives --install /sbin/iptables iptables /sbin/iptables-legacy 
 # Set Environment
 ENV DEBUG=Server,WireGuard
 
+# Trasport
+EXPOSE 51820/udp
+# WEB
+EXPOSE 51821/tcp
+
 # Run Web UI
 WORKDIR /app
 CMD ["/usr/bin/dumb-init", "node", "server.js"]
